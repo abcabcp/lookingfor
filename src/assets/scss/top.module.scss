@@ -1,0 +1,245 @@
+@import "assets/scss/font.module.scss";
+@import "assets/scss/mixin";
+
+
+@include desktop {
+    .header {
+        text-align: center;
+        .title {
+            font-size: 35px;
+            font-family: "Carter One", cursive;
+            margin: 20px 0 35px 0;
+        }
+        
+        .form {
+            position: relative;
+        }
+        
+        .searchInput {
+            width: 300px;
+            height: 30px;
+            border-radius: 15px;
+            text-indent: 15px;
+        
+            &:focus {
+                background-color: #f76b8a;
+            }
+        }
+
+        .searchBtn {
+            position: absolute;
+            left: 597px;
+            top: 4px;
+            border: none;
+            width: 18px;
+            background: none;
+        }
+        
+        .searchIcon {
+            width: 18px;
+        }
+    }
+
+    .navContainer {
+        margin-top: 30px;
+        width: 100%;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        height: 35px;
+
+        .menuLink {
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #222;
+            line-height: 34px;
+        
+            &:hover {
+                color: #f76b8a;
+            }
+        
+            &:after {
+                content: '|';
+                display: inline-block;
+                padding: 0 7px;
+                color: #ccc;
+            }
+        
+            &:last-child {
+                &:after {
+                    color: #fff;
+                }
+            }
+        
+            &.active {
+                text-decoration: underline;
+                color: #f76b8a;
+                &:after {
+                    border-bottom: 4px solid #fff !important;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .header {
+        text-align: center;
+        .title {
+            font-size: 30px;
+            font-family: "Carter One", cursive;
+            margin: 20px 0 30px 0;
+        }
+        
+        .form {
+            position: relative;
+        }
+        
+        .searchInput {
+            width: 280px;
+            height: 30px;
+            border-radius: 15px;
+            text-indent: 15px;
+        
+            &:focus {
+                background-color: #f76b8a;
+            }
+        }
+
+        .searchBtn {
+            position: absolute;
+            left: 455px;
+            top: 4px;
+            border: none;
+            width: 18px;
+            background: none;
+        }
+        
+        .searchIcon {
+            width: 18px;
+        }
+    }
+
+    .navContainer {
+        margin-top: 20px;
+        width: 100%;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        height: 35px;
+        
+        .menuLink {
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #222;
+            line-height: 34px;
+        
+            &:hover {
+                color: #f76b8a;
+            }
+        
+            &:after {
+                content: '|';
+                display: inline-block;
+                padding: 0 7px;
+                color: #ccc;
+            }
+        
+            &:last-child {
+                &:after {
+                    color: #fff;
+                }
+            }
+        
+            &.active {
+                text-decoration: underline;
+                color: #f76b8a;
+                &:after {
+                    border-bottom: 4px solid #fff !important;
+                }
+            }
+        }
+    }
+}
+
+
+@include mobile {
+    .header {
+        text-align: center;
+        .title {
+            font-size: 24px;
+            font-family: "Carter One", cursive;
+            margin: 20px 0 20px 0;
+        }
+        
+        .form {
+            position: relative;
+        }
+        
+        .searchInput {
+            width: 230px;
+            height: 28px;
+            border-radius: 15px;
+            text-indent: 15px;
+        
+            &:focus {
+                background-color: #f76b8a;
+            }
+        }
+
+        .searchBtn {
+            position: absolute;
+            left: 240px;
+            top: 5px;
+            border: none;
+            width: 15px;
+            background: none;
+        }
+        
+        .searchIcon {
+            width: 15px;
+        }
+    }
+
+    .navContainer {
+        margin-top: 15px;
+        width: 100%;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        height: 35px;
+        text-align: center;
+
+        .menuLink {
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #222;
+            line-height: 34px;
+        
+            &:hover {
+                color: #f76b8a;
+            }
+        
+            &:after {
+                content: '|';
+                display: inline-block;
+                padding: 0 7px;
+                color: #ccc;
+            }
+        
+            &:last-child {
+                &:after {
+                    color: #fff;
+                }
+            }
+        
+            &.active {
+                text-decoration: underline;
+                color: #f76b8a;
+                &:after {
+                    border-bottom: 4px solid #fff !important;
+                }
+            }
+        }
+    }
+}
