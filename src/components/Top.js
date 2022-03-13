@@ -1,7 +1,40 @@
 import React from 'react';
+import styled from "styled-components";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import style from 'assets/scss/top.module.scss';
 import searchIcon from 'assets/img/search.png';
+
+const MenuLink = styled(NavLink)`
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #222;
+    line-height: 34px;
+
+    &:hover {
+        color: #f76b8a;
+    }
+
+    &:after {
+        content: "|";
+        display: inline-block;
+        padding: 0 7px;
+        color: #ccc;
+    }
+
+    &:last-child {
+        &:after {
+            color: #fff;
+        }
+    }
+
+    &.active {
+        color: #f76b8a;
+        &:after {
+            border-bottom: 4px solid #fff !important;
+        }
+    }
+`;
 
 const Top = () => {
     const inputQuery = React.useRef();
@@ -46,11 +79,11 @@ const Top = () => {
             </div>
 
             <nav className={style.navContainer}>
-                <NavLink to={`/web?query=${encodeURIComponent(query)}`} className={style.menuLink}>WEB</NavLink>
-                <NavLink to={`/image?query=${encodeURIComponent(query)}`} className={style.menuLink}>IMAGE</NavLink>
-                <NavLink to={`/blog?query=${encodeURIComponent(query)}`}className={style.menuLink}>BLOG</NavLink>
-                <NavLink to={`/cafe?query=${encodeURIComponent(query)}`}className={style.menuLink}>CAFE</NavLink>
-                <NavLink to={`/book?query=${encodeURIComponent(query)}`}className={style.menuLink}>BOOK</NavLink>
+                <MenuLink to={`/web?query=${encodeURIComponent(query)}`} className={style.menuLink}>WEB</MenuLink>
+                <MenuLink to={`/image?query=${encodeURIComponent(query)}`} className={style.menuLink}>IMAGE</MenuLink>
+                <MenuLink to={`/blog?query=${encodeURIComponent(query)}`}className={style.menuLink}>BLOG</MenuLink>
+                <MenuLink to={`/cafe?query=${encodeURIComponent(query)}`}className={style.menuLink}>CAFE</MenuLink>
+                <MenuLink to={`/book?query=${encodeURIComponent(query)}`}className={style.menuLink}>BOOK</MenuLink>
             </nav>
         </div>
     );

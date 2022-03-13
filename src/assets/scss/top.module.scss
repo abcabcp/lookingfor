@@ -47,38 +47,6 @@
         border-bottom: 1px solid #e5e5e5;
         height: 35px;
 
-        .menuLink {
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-            color: #222;
-            line-height: 34px;
-        
-            &:hover {
-                color: #f76b8a;
-            }
-        
-            &:after {
-                content: '|';
-                display: inline-block;
-                padding: 0 7px;
-                color: #ccc;
-            }
-        
-            &:last-child {
-                &:after {
-                    color: #fff;
-                }
-            }
-        
-            &.active {
-                text-decoration: underline;
-                color: #f76b8a;
-                &:after {
-                    border-bottom: 4px solid #fff !important;
-                }
-            }
-        }
     }
 }
 
@@ -127,38 +95,6 @@
         border-bottom: 1px solid #e5e5e5;
         height: 35px;
         
-        .menuLink {
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-            color: #222;
-            line-height: 34px;
-        
-            &:hover {
-                color: #f76b8a;
-            }
-        
-            &:after {
-                content: '|';
-                display: inline-block;
-                padding: 0 7px;
-                color: #ccc;
-            }
-        
-            &:last-child {
-                &:after {
-                    color: #fff;
-                }
-            }
-        
-            &.active {
-                text-decoration: underline;
-                color: #f76b8a;
-                &:after {
-                    border-bottom: 4px solid #fff !important;
-                }
-            }
-        }
     }
 }
 
@@ -200,7 +136,6 @@
             width: 15px;
         }
     }
-
     .navContainer {
         margin-top: 15px;
         width: 100%;
@@ -208,38 +143,5 @@
         border-bottom: 1px solid #e5e5e5;
         height: 35px;
         text-align: center;
-
-        .menuLink {
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-            color: #222;
-            line-height: 34px;
-        
-            &:hover {
-                color: #f76b8a;
-            }
-        
-            &:after {
-                content: '|';
-                display: inline-block;
-                padding: 0 7px;
-                color: #ccc;
-            }
-        
-            &:last-child {
-                &:after {
-                    color: #fff;
-                }
-            }
-        
-            &.active {
-                text-decoration: underline;
-                color: #f76b8a;
-                &:after {
-                    border-bottom: 4px solid #fff !important;
-                }
-            }
-        }
     }
 }
