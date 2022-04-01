@@ -30,9 +30,9 @@ export const getCafeList = createAsyncThunk('CAFE/GET_LIST', async (payload, { r
 export const cafeSlice = createSlice({
     name: 'cafe',
     initialState: {
-        rt: null, //HTTP 상태 코드 (200, 404, 500등)
-        rtmsg: null, //에러메시지
-        item: [], //ajax 처리를 통해 수신된 데이터
+        rt: null,
+        rtmsg: null,
+        item: [],
         loading: false,
     },
     //내부 action 및 동기 action (Ajax 처리시에는 사용하지 않음)

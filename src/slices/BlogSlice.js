@@ -30,9 +30,9 @@ export const getBlogList = createAsyncThunk('BLOG/GET_LIST', async (payload, { r
 export const blogSlice = createSlice({
     name: 'blog',
     initialState: {
-        rt: null, //HTTP 상태 코드 (200, 404, 500등)
-        rtmsg: null, //에러메시지
-        item: [], //ajax 처리를 통해 수신된 데이터
+        rt: null,
+        rtmsg: null,
+        item: [],
         loading: false,
     },
     //내부 action 및 동기 action (Ajax 처리시에는 사용하지 않음)
@@ -42,7 +42,6 @@ export const blogSlice = createSlice({
             return { ...state, loading: true };
         },
         [getBlogList.fulfilled]: (state, { meta, payload }) => {
-            //1페이지가 아닐 경우에는 리덕스에 저장되어 있는 현재 페이지에 새로 받아온 데이터를 병합하여 ajax의 결과를 재구성한다.
             if (meta.arg.page > 1) {
                 payload.data.documents = state.item.documents.concat(payload.data.documents);
             }

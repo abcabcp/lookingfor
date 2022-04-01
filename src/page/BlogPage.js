@@ -22,6 +22,11 @@ const BlogPage = ({ query }) => {
     }, [query]);
 
     useEffect(() => {
+        setPage(1);
+        dispatch(getBlogList({ query: query, page: page }));
+    }, [query]);
+
+    useEffect(() => {
         if (!loading) {
             dispatch(getBlogList({ query: query, page: page }));
         }
@@ -49,6 +54,7 @@ const BlogPage = ({ query }) => {
                     }}
                 />
             )}
+
             {rt !== 200 && loading === false && (
                 <>
                     <div>{rt}</div>
@@ -56,10 +62,8 @@ const BlogPage = ({ query }) => {
                 </>
             )}
 
-            {loading === true && !query && <div style={{ marginTop: '20px' }}>&nbsp;검색어를 입력해주세요</div>}
-
             {/**결과값이 실패한 경우 에러메시지 표시, 성공인 경우 목록 컴포넌트 호출 */}
-            {rt === 200 && query && <ListView documents={item.documents} thumb={true} inview={ref} rt={rt} rtmsg={rtmsg} />}
+            {rt === 200 && <ListView documents={item.documents} thumb={true} inview={ref} rt={rt} rtmsg={rtmsg} />}
         </div>
     );
 };

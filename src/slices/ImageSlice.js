@@ -30,12 +30,11 @@ export const getImageList = createAsyncThunk('IMAGE/GET_LIST', async (payload, {
 export const imageSlice = createSlice({
     name: 'image',
     initialState: {
-        rt: null, //HTTP 상태 코드 (200, 404, 500등)
-        rtmsg: null, //에러메시지
-        item: [], //ajax 처리를 통해 수신된 데이터
+        rt: null,
+        rtmsg: null,
+        item: [],
         loading: false,
     },
-    //내부 action 및 동기 action (Ajax 처리시에는 사용하지 않음)
     reducers: {},
     extraReducers: {
         [getImageList.pending]: (state, { payload }) => {

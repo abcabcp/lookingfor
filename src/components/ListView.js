@@ -1,7 +1,7 @@
-import React from "react";
-import dayjs from "dayjs";
-import style from "assets/scss/style.module.scss";
-import noimg from "assets/img/noimg.png";
+import React from 'react';
+import dayjs from 'dayjs';
+import style from 'assets/scss/style.module.scss';
+import noimg from 'assets/img/noimg.png';
 
 /**
  * 검색 결과와 썸네일 표시 여부를 전달받아 화면에 목록을 출력하는 컴포넌트
@@ -11,40 +11,21 @@ import noimg from "assets/img/noimg.png";
  */
 
 const ListView = ({ documents, thumb, inview }) => {
-    console.log(documents);
     return (
         <ul className={style.mediaList}>
             {/** 검색 결과에 대한 반복문 수행 */}
             {documents?.length > 0 ? (
                 documents.map((item, index) => (
-                    <li
-                        className={style.mediaItem}
-                        key={index}
-                        {...(documents.length - 1 === index
-                            ? { ref: inview }
-                            : {})}
-                    >
-                        <a
-                            href={item.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={thumb && style.thumbnail}
-                        >
+                    <li className={style.mediaItem} key={index} {...(documents.length - 1 === index ? { ref: inview } : {})}>
+                        <a href={item.url} target="_blank" rel="noreferrer" className={thumb && style.thumbnail}>
                             {thumb && (
                                 <img
-                                    src={
-                                        item.thumbnail ? item.thumbnail : noimg
-                                    }
-                                    onError={(e) =>
-                                        (e.currentTarget.src = noimg)
-                                    }
+                                    src={item.thumbnail ? item.thumbnail : noimg}
+                                    onError={e => (e.currentTarget.src = noimg)}
                                     alt={item.title}
                                 />
                             )}
-                            <h2
-                                className={style.mediaHeading}
-                                dangerouslySetInnerHTML={{ __html: item.title }}
-                            />
+                            <h2 className={style.mediaHeading} dangerouslySetInnerHTML={{ __html: item.title }} />
                             <p
                                 className={style.desc}
                                 dangerouslySetInnerHTML={{
@@ -62,9 +43,7 @@ const ListView = ({ documents, thumb, inview }) => {
                             <p className={style.date}>
                                 {item.authors && (
                                     <span>
-                                        <strong>
-                                            {item.authors.join(",")}
-                                        </strong>
+                                        <strong>{item.authors.join(',')}</strong>
                                     </span>
                                 )}
                                 {item.publishers && (
@@ -84,11 +63,7 @@ const ListView = ({ documents, thumb, inview }) => {
                                 )}
                                 {item.datetime && (
                                     <span>
-                                        <strong>
-                                            {dayjs(item.datetime).format(
-                                                "YYYY-MM-DD hh:mm"
-                                            )}
-                                        </strong>
+                                        <strong>{dayjs(item.datetime).format('YYYY-MM-DD hh:mm')}</strong>
                                     </span>
                                 )}
                             </p>

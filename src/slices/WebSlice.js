@@ -30,19 +30,17 @@ export const getWebList = createAsyncThunk('WEB/GET_LIST', async (payload, { rej
 export const webSlice = createSlice({
     name: 'web',
     initialState: {
-        rt: null, //HTTP 상태 코드 (200, 404, 500등)
-        rtmsg: null, //에러메시지
-        item: [], //ajax 처리를 통해 수신된 데이터
+        rt: null,
+        rtmsg: null,
+        item: [],
         loading: false,
     },
-    //내부 action 및 동기 action (Ajax 처리시에는 사용하지 않음)
     reducers: {},
     extraReducers: {
         [getWebList.pending]: (state, { payload }) => {
             return { ...state, loading: true };
         },
         [getWebList.fulfilled]: (state, { meta, payload }) => {
-            //1페이지가 아닐 경우에는 리덕스에 저장되어 있는 현재 페이지에 새로 받아온 데이터를 병합하여 ajax의 결과를 재구성한다.
             if (meta.arg.page > 1) {
                 payload.data.documents = state.item.documents.concat(payload.data.documents);
             }

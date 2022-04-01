@@ -18,14 +18,15 @@ const BookPage = ({ query = '' }) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('1');
         setPage(1);
     }, [query]);
 
     useEffect(() => {
-        console.log('2');
+        dispatch(getBookList({ query: query, page: page }));
+    }, [query]);
+
+    useEffect(() => {
         if (!loading) {
-            console.log('3');
             dispatch(getBookList({ query: query, page: page }));
         }
     }, [dispatch, page]);
@@ -60,10 +61,8 @@ const BookPage = ({ query = '' }) => {
                 </>
             )}
 
-            {loading === true && !query && <div style={{ marginTop: '20px' }}>&nbsp;검색어를 입력해주세요</div>}
-
             {/**결과값이 실패한 경우 에러메시지 표시, 성공인 경우 목록 컴포넌트 호출 */}
-            {rt === 200 && query && <ListView documents={item.documents} thumb={true} inview={ref} rt={rt} rtmsg={rtmsg} />}
+            {rt === 200 && <ListView documents={item.documents} thumb={true} inview={ref} rt={rt} rtmsg={rtmsg} />}
         </div>
     );
 };
