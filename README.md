@@ -1,10 +1,10 @@
-<h1 align="center">Look for❤</h1>
+<h1 align="center">Looking for❤</h1>
 <div align="center">
     <img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=black"/>
     <img src="https://img.shields.io/badge/Scss-green?style=flat-square&logo=Sass&logoColor=CC6699"/>
 </div>
 
-### 👀 [Look for](https://abcabcp.github.io/lookingfor/)
+### 👀 [Looking for](https://abcabcp.github.io/lookingfor/)
 
 ### 2022-03-07 ~ 2022-03-14
 
