@@ -64,5 +64,4 @@ export const imageSlice = createSlice({
     },
 });
 
-//리듀서 객체 내보내기
 export default imageSlice.reducer;

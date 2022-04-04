@@ -65,5 +65,4 @@ export const cafeSlice = createSlice({
     },
 });
 
-//리듀서 객체 내보내기
 export default cafeSlice.reducer;
